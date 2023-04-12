@@ -17,6 +17,10 @@
         "react"
     ],
     "rules": {
-        "semi": "warn"
+        "semi": "warn",
+        "quotes": [1, "single"],
+        "object-curly-spacing": ["error","always"],
+        "react/react-in-jsx-scope": "off", // 对react 17以上版本，不需要在JSX文件中强制引入React
+        "react/jsx-uses-react": "off" // // 对react 17以上版本，不需要在JSX文件中强制引入React
     }
 }
