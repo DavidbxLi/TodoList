@@ -30,6 +30,24 @@ module.exports = merge(common, {
         // 排除 node_modules 目录
         exclude: /node_modules/,
       },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer"]],
+              },
+            },
+          },
+          "less-loader",
+        ],
+        // 排除 node_modules 目录
+        exclude: /node_modules/,
+      },
     ],
   },
   stats: "errors-only", // Webpack 在编译的时候只输出错误日志，终端更清爽

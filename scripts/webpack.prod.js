@@ -37,6 +37,22 @@ module.exports = merge(common, {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer"]],
+              },
+            },
+          },
+          "less-loader",
+        ],
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
